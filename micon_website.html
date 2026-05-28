@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Micon Real Line — Giving You The Best</title>
+<meta name="description" content="Micon Real Line is Rwanda's premier advertising and technology company. We deliver premium outdoor advertising, digital media, and innovative brand solutions.">
+<meta property="og:title" content="Micon Real Line — Giving You The Best">
+<meta property="og:description" content="Rwanda's premier advertising and technology solutions company.">
+<meta property="og:url" content="https://micon.rw">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <svg class="nav-logo-icon" viewBox="0 0 40 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="0,36 0,0 18,18" fill="#7B35D0"/>
+      <polygon points="40,0 22,18 40,36" fill="#F97316"/>
+      <polygon points="0,36 22,18 40,36" fill="#E91E8C"/>
+      <polygon points="0,0 22,18 18,18" fill="url(#g1)" opacity=".9"/>
+      <defs><linearGradient id="g1" x1="0" y1="0" x2="22" y2="18"><stop stop-color="#7B35D0"/><stop offset="1" stop-color="#F97316"/></linearGradient></defs>
+    </svg>
+    <div class="nav-logo-text">MICON<span>REAL LINE</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#lineads">LineAds</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li>
+      <button id="themeToggle" style="background:none;border:none;cursor:pointer;color:var(--c-muted);padding:8px;display:flex;align-items:center;justify-content:center;transition:color 0.3s;" aria-label="Toggle Dark Mode">
+        <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-close" onclick="toggleMenu()">✕</span>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#lineads" onclick="toggleMenu()">LineAds</a>
+  <a href="#clients" onclick="toggleMenu()">Clients</a>
+  <button id="mobileThemeToggle" style="background:none;border:none;cursor:pointer;color:var(--c-muted);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+    <svg id="mobileThemeIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+  </button>
+  <a href="#contact" onclick="toggleMenu()" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Get in Touch</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge" id="heroBadge">Kigali, Rwanda &bull; Est. 2020</div>
+    <h1 id="heroTitle">
+      <span id="heroLine1">Real Results.</span><br>
+      <span class="hero-line2" id="heroLine2">Real Impact.</span>
+    </h1>
+    <p class="hero-sub" id="heroSub">Rwanda's premier advertising and technology company — delivering premium outdoor media, digital solutions, and brand experiences that move people.</p>
+    <div class="hero-btns" id="heroBtns">
+      <a href="#services" class="btn-primary">
+        Explore Services
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#contact" class="btn-outline">
+        Start a Project
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-visual reveal-left">
+      <div class="about-card main">
+        <svg class="geo-pattern" width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <polygon points="0,120 0,0 60,60" stroke="rgba(123,53,208,.4)" stroke-width="1" fill="none"/>
+          <polygon points="120,0 60,60 120,120" stroke="rgba(249,115,22,.4)" stroke-width="1" fill="none"/>
+          <polygon points="0,120 60,60 120,120" stroke="rgba(233,30,140,.4)" stroke-width="1" fill="none"/>
+          <polygon points="30,0 30,60 60,30" stroke="rgba(123,53,208,.2)" stroke-width=".5" fill="none"/>
+        </svg>
+        <div>
+          <p style="font-size:13px;color:var(--c-muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Our Core Mission</p>
+          <h3 style="font-family:var(--font-head);font-size:22px;font-weight:700;line-height:1.3">Connecting brands to<br><span class="grad-text">real audiences</span></h3>
+        </div>
+        <div class="stat-row">
+          <div class="stat">
+            <div class="stat-num" data-count="50">0</div>
+            <div class="stat-label">Clients Served</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" data-count="5">0</div>
+            <div class="stat-label">Years Active</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" data-count="200">0</div>
+            <div class="stat-label">Campaigns</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-card float reveal d2">
+        <p style="font-size:12px;color:var(--c-muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px">Reach &amp; Coverage</p>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px"><span>Kigali Metro</span><span class="grad-text" style="font-weight:700">92%</span></div>
+            <div style="height:4px;background:rgba(255,255,255,.08);border-radius:4px"><div style="height:100%;width:92%;background:var(--grad);border-radius:4px"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px"><span>National Coverage</span><span class="grad-text" style="font-weight:700">67%</span></div>
+            <div style="height:4px;background:rgba(255,255,255,.08);border-radius:4px"><div style="height:100%;width:67%;background:var(--grad);border-radius:4px"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px"><span>Digital Impressions/mo</span><span class="grad-text" style="font-weight:700">1.2M+</span></div>
+            <div style="height:4px;background:rgba(255,255,255,.08);border-radius:4px"><div style="height:100%;width:80%;background:var(--grad);border-radius:4px"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-content reveal-right">
+      <div class="section-tag">Who We Are</div>
+      <h2>Built on trust,<br>Driven by <span class="highlight">results</span></h2>
+      <p class="section-desc">Micon Real Line is Rwanda's leading integrated advertising and technology firm. We partner with ambitious brands to build presence, generate awareness, and drive measurable growth.</p>
+
+      <div class="about-feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C084FC" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="feature-text">
+          <h4>Performance-Driven</h4>
+          <p>Every campaign is engineered for measurable outcomes. We combine strategy with execution to deliver real ROI.</p>
+        </div>
+      </div>
+      <div class="about-feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C084FC" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="feature-text">
+          <h4>Full-Service Delivery</h4>
+          <p>From strategy through production and placement — we are your single partner for integrated brand communications.</p>
+        </div>
+      </div>
+      <div class="about-feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C084FC" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="feature-text">
+          <h4>Collaborative by Nature</h4>
+          <p>We embed ourselves in your team — understanding your goals, your audience, and your market before we create.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="services-header">
+      <div class="section-tag reveal">What We Do</div>
+      <h2 class="reveal d1">Services designed to <span class="highlight">grow your brand</span></h2>
+      <p class="section-desc reveal d2" style="text-align:center">We deliver integrated advertising, media, and technology solutions tailored for Rwanda's most ambitious organisations.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card featured reveal d1">
+        <div class="service-card-inner">
+          <div class="service-icon" style="background:linear-gradient(135deg,rgba(123,53,208,.3),rgba(249,115,22,.2))">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#si1)" stroke-width="2">
+              <defs><linearGradient id="si1" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#C084FC"/><stop offset="1" stop-color="#F97316"/></linearGradient></defs>
+              <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <h3>Outdoor Advertising</h3>
+          <p>Premium billboard and out-of-home advertising across Kigali and Rwanda's major cities. High-visibility placements that build brand recall.</p>
+          <a href="#contact" class="service-arrow">Start Campaign →</a>
+        </div>
+      </div>
+
+      <div class="service-card reveal d2">
+        <div class="service-card-inner">
+          <div class="service-icon" style="background:rgba(233,30,140,.12)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F472B6" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+          </div>
+          <h3>LineAds Platform</h3>
+          <p>Our proprietary digital advertising platform delivering hyper-targeted line ads across Rwanda's premium digital network.</p>
+          <a href="#lineads" class="service-arrow">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="service-card reveal d3">
+        <div class="service-card-inner">
+          <div class="service-icon" style="background:rgba(249,115,22,.12)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FB923C" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Digital Media Solutions</h3>
+          <p>Comprehensive digital media management including social media, content strategy, and performance advertising across all major platforms.</p>
+          <a href="#contact" class="service-arrow">Get Started →</a>
+        </div>
+      </div>
+
+      <div class="service-card reveal d1">
+        <div class="service-card-inner">
+          <div class="service-icon" style="background:rgba(94,234,212,.1)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Security Systems</h3>
+          <p>State-of-the-art surveillance and access control systems for corporate and commercial properties. Smart, connected, and reliable.</p>
+          <a href="#contact" class="service-arrow">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="service-card reveal d2">
+        <div class="service-card-inner">
+          <div class="service-icon" style="background:rgba(168,85,247,.12)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2"><path d="M12 2l10 6.5v7L12 22 2 15.5v-7L12 2z"/><path d="M12 22v-6.5"/><path d="M22 8.5l-10 7-10-7"/></svg>
+          </div>
+          <h3>Brand Strategy</h3>
+          <p>End-to-end brand development — from identity and positioning to messaging frameworks that resonate with your target audience.</p>
+          <a href="#contact" class="service-arrow">Build Your Brand →</a>
+        </div>
+      </div>
+
+      <div class="service-card reveal d3">
+        <div class="service-card-inner">
+          <div class="service-icon" style="background:rgba(250,204,21,.1)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FACC15" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
+          </div>
+          <h3>Technology Integration</h3>
+          <p>Seamless tech implementation for modern businesses — connecting your infrastructure, tools, and teams for peak performance.</p>
+          <a href="#contact" class="service-arrow">Integrate Now →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LINEADS SPOTLIGHT -->
+<section id="lineads">
+  <div class="lineads-wrap">
+    <div class="reveal-left">
+      <div class="section-tag">Flagship Product</div>
+      <h2>Introducing <span class="highlight">LineAds</span></h2>
+      <p style="color:var(--c-muted);font-size:1.05rem;line-height:1.8;margin:20px 0 32px;font-weight:300">LineAds is our proprietary digital advertising solution — purpose-built for Rwanda's media landscape. Reach your audience precisely where they are, with real-time analytics and verified delivery.</p>
+      <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:40px">
+        <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--c-muted)">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--c-purple);flex-shrink:0"></div>
+          Hyper-targeted audience segmentation
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--c-muted)">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--c-orange);flex-shrink:0"></div>
+          Real-time campaign dashboard & analytics
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--c-muted)">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--c-pink);flex-shrink:0"></div>
+          Premium network across Kigali & beyond
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--c-muted)">
+          <div style="width:8px;height:8px;border-radius:50%;background:#5EEAD4;flex-shrink:0"></div>
+          Transparent pricing & verified impressions
+        </div>
+      </div>
+      <a href="#contact" class="btn-primary" style="display:inline-flex;width:fit-content">Request LineAds Demo →</a>
+    </div>
+    <div class="reveal-right" style="display:flex;justify-content:center;align-items:center;">
+      <div class="parent">
+        <div class="card">
+          <div class="logo">
+            <span class="circle circle1"></span>
+            <span class="circle circle2"></span>
+            <span class="circle circle3"></span>
+            <span class="circle circle4"></span>
+            <span class="circle circle5">
+              <svg viewBox="0 0 24 24" class="svg" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+            </span>
+          </div>
+          <div class="glass"></div>
+          <div class="content">
+            <span class="title">LineAds</span>
+            <span class="text">Premium digital advertising network</span>
+          </div>
+          <div class="bottom">
+            <div class="social-buttons-container">
+              <button class="social-button">
+                <svg viewBox="0 0 24 24" class="svg"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              </button>
+            </div>
+            <div class="view-more">
+              <button class="view-more-button">Explore</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="clients-header reveal">
+    <div class="section-tag" style="justify-content:center;margin-bottom:12px">Social Proof</div>
+    <h2>Trusted by leading brands</h2>
+    <p style="color:var(--c-muted);font-size:14px;letter-spacing:.1em;text-transform:uppercase;margin-top:12px">Clients we've proudly worked with</p>
+  </div>
+  <div class="logos-track-wrap">
+    <div class="logos-track" id="logosTrack"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="stats-grid reveal">
+    <div class="stat-card">
+      <div class="stat-card-num" data-count="50" data-suffix="+">0</div>
+      <div class="stat-card-label">Happy Clients</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-num" data-count="200" data-suffix="+">0</div>
+      <div class="stat-card-label">Campaigns Delivered</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-num" data-count="5" data-suffix="M+">0</div>
+      <div class="stat-card-label">Monthly Impressions</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-num" data-count="98" data-suffix="%">0</div>
+      <div class="stat-card-label">Client Retention</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-wrap">
+    <div class="cta-glow reveal">
+      <div class="section-tag" style="justify-content:center;margin-bottom:16px">Ready to Grow?</div>
+      <h2>Let's build something <span class="highlight">remarkable</span></h2>
+      <p>Whether you need a high-impact billboard campaign, a digital media strategy, or a complete brand overhaul — our team is ready to deliver.</p>
+      <div class="cta-btns">
+        <a href="#contact" class="btn-primary">Start Your Project</a>
+        <a href="mailto:info@micon.rw" class="btn-outline">Email Us Directly</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info reveal-left">
+      <div class="section-tag">Contact Us</div>
+      <h2>Get in <span class="highlight">touch</span></h2>
+      <p style="color:var(--c-muted);font-size:1rem;line-height:1.8;margin:20px 0 48px;font-weight:300">Ready to start your next campaign? Fill in the form and our team will reach out within 24 hours.</p>
+
+      <div class="contact-detail">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <h4>Email</h4>
+          <a href="mailto:info@micon.rw">info@micon.rw</a>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <h4>Location</h4>
+          <p>Kigali, Rwanda</p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div>
+          <h4>Phone</h4>
+          <a href="tel:+250788000000">+250 788 000 000</a>
+        </div>
+      </div>
+
+      <div style="margin-top:40px;padding-top:40px;border-top:1px solid var(--c-border)">
+        <p style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--c-muted);margin-bottom:16px">Follow Us</p>
+        <div class="social-links">
+          <a href="#" class="social-link" title="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="#" class="social-link" title="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" class="social-link" title="Twitter/X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+          </a>
+          <a href="#" class="social-link" title="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form reveal-right">
+      <h3 style="font-family:var(--font-head);font-size:22px;font-weight:700;margin-bottom:28px">Send us a message</h3>
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="fname" name="name" placeholder="Jean-Pierre Habimana" required>
+          </div>
+          <div class="form-group">
+            <label>Company</label>
+            <input type="text" id="fcompany" name="company" placeholder="Your Company Ltd.">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" id="femail" name="email" placeholder="you@company.rw" required>
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" id="fphone" name="phone" placeholder="+250 7XX XXX XXX">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Service Interested In</label>
+          <select id="fservice" name="service">
+            <option value="" disabled selected>Select a service...</option>
+            <option>Outdoor Advertising</option>
+            <option>LineAds Platform</option>
+            <option>Digital Media Solutions</option>
+            <option>Security Systems</option>
+            <option>Brand Strategy</option>
+            <option>Technology Integration</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message *</label>
+          <textarea id="fmessage" name="message" placeholder="Tell us about your project, campaign goals, or questions..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="formSubmit">
+          <div class="svg-wrapper" aria-hidden="true">
+            <svg id="submitArrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <span id="submitText">Send Message</span>
+        </button>
+        <div class="form-msg" id="formMsg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo" style="margin-bottom:4px;display:inline-flex">
+        <svg width="32" height="29" viewBox="0 0 40 36" fill="none">
+          <polygon points="0,36 0,0 18,18" fill="#7B35D0"/>
+          <polygon points="40,0 22,18 40,36" fill="#F97316"/>
+          <polygon points="0,36 22,18 40,36" fill="#E91E8C"/>
+        </svg>
+        <div class="nav-logo-text" style="margin-left:10px">MICON<span>REAL LINE</span></div>
+      </a>
+      <p>Rwanda's premier advertising and technology company. Giving you the best in media, strategy, and brand solutions.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" title="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <a href="#" class="social-link" title="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="#" class="social-link" title="Twitter/X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+        </a>
+        <a href="#" class="social-link" title="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#clients">Our Clients</a></li>
+        <li><a href="#contact">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">Outdoor Advertising</a></li>
+        <li><a href="#lineads">LineAds</a></li>
+        <li><a href="#services">Digital Media</a></li>
+        <li><a href="#services">Security Systems</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:info@micon.rw">info@micon.rw</a></li>
+        <li><a href="tel:+250788000000">+250 788 000 000</a></li>
+        <li><a href="#">Kigali, Rwanda</a></li>
+        <li><a href="#contact">Get in Touch</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Micon Real Line. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
