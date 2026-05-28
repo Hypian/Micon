@@ -162,6 +162,42 @@ const counterObserver=new IntersectionObserver(entries=>{
 },{threshold:.3});
 document.querySelectorAll('#about,.stats-grid').forEach(el=>counterObserver.observe(el));
 
+/* ── CTA TYPEWRITER ── */
+(function initCtaTypewriter(){
+  const el=document.getElementById('ctaType');
+  if(!el)return;
+
+  const full=el.getAttribute('data-text')||'';
+  const reduceMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduceMotion){el.textContent=full;return;}
+
+  let started=false;
+  function start(){
+    if(started)return;
+    started=true;
+    el.textContent='';
+    let i=0;
+    const tick=()=>{
+      el.textContent=full.slice(0,i);
+      i++;
+      if(i<=full.length)setTimeout(tick,55);
+    };
+    tick();
+  }
+
+  const cta=document.getElementById('cta');
+  if(!cta){start();return;}
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        start();
+        obs.disconnect();
+      }
+    });
+  },{threshold:.4});
+  obs.observe(cta);
+})();
+
 /* ── CONTACT FORM ── */
 const form=document.getElementById('contactForm');
 const btn=document.getElementById('formSubmit');

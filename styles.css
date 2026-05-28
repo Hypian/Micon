@@ -204,6 +204,14 @@ h2{font-family:var(--font-head);font-size:clamp(2rem,4.5vw,3.5rem);font-weight:8
 .cta-glow p{color:var(--c-muted);font-size:1.1rem;margin-bottom:48px;font-weight:300}
 .cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 
+/* Typewriter (CTA heading) */
+#cta .typewriter{display:inline;white-space:normal;overflow-wrap:anywhere}
+#cta .typewriter::after{content:"";display:inline-block;width:2px;height:1em;background:currentColor;vertical-align:-.15em;margin-left:.12em;opacity:1;animation:caret-blink .9s steps(1) infinite}
+@keyframes caret-blink{50%{opacity:0}}
+@media (prefers-reduced-motion: reduce){
+  #cta .typewriter::after{animation:none}
+}
+
 /* CONTACT */
 #contact{background:var(--c-bg);padding:120px 5%}
 .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;max-width:1200px;margin:0 auto;align-items:start}
