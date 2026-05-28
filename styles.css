@@ -294,9 +294,9 @@ footer{background:var(--c-bg2);border-top:1px solid var(--c-border);padding:80px
 .stats-grid{grid-template-columns:repeat(2,1fr)}
 .footer-grid{grid-template-columns:1fr 1fr;gap:40px}
 .about-grid,.lineads-wrap,.contact-grid{grid-template-columns:1fr;gap:48px}
-.about-visual{height:320px}
-.about-card.main{right:0}
-.about-card.float{right:0}
+.about-visual{height:auto;display:flex;flex-direction:column;gap:16px}
+/* stack about cards (avoid overlap on mobile/tablet) */
+.about-card{position:static!important;left:auto!important;top:auto!important;right:auto!important;bottom:auto!important;width:100%}
 #cursor,#cursor-ring{display:none}
 }
 @media(max-width:768px){
